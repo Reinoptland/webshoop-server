@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const Product = require("../models").product;
+const authMiddleWare = require("../auth/middleware");
 
 // registered as '/products'
 const router = new Router();
@@ -12,9 +13,11 @@ router.get("/", async (req, res) => {
 });
 
 // POST /products
-router.post("/", (req, res) => {
-  console.log("HI!");
-  res.send("HELLO FROM BACKEND");
+router.post("/", authMiddleWare, async (req, res) => {
+  //   console.log("WHAT IS REQ.BODY?", req.body);
+  const newProduct = await Product.create(req.body);
+  //   console.log(newProduct.dataValues);
+  res.status(201).send({ message: "Product Created", product: newProduct });
 });
 
 module.exports = router;

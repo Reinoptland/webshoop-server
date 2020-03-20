@@ -20,9 +20,9 @@ FE
 
 BE
 
-- Make route "endpoint" in the backend
-- Create a product with data from the user
-- Send a response
+- X Make route "endpoint" in the backend
+- X Create a product with data from the user
+- X Send a response
 
 FE
 
