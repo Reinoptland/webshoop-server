@@ -1,8 +1,8 @@
 # Show Products
 
-- Model
-- Migration
-- Seeding
+- X Model
+- X Migration
+- X Seeding
 - Backend Route GET products
 - Route for a product page in the frontend
 - Component
